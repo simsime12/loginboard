@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.mapper.UserMapper">
+
+
+    <insert id="postMember" parameterType="com.example.demo.dto.UserDto">
+        insert into usertest(name,id,password,userid) values(#{name},#{id},#{password},#{userid})
+    </insert>
+    <select id="getUserOne" parameterType="com.example.demo.dto.UserDto" resultType="com.example.demo.dto.UserDto">
+        select * from usertest u where u.userid = #{userid}
+    </select>
+
+</mapper>
